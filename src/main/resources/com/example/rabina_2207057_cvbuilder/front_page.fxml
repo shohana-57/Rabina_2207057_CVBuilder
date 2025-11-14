@@ -15,7 +15,7 @@
             <Font name="Tw Cen MT" size="15.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="DEFAULT" />
+            <Cursor fx:constant="DEFAULT"/>
          </cursor>
       </Button>
    </center>
