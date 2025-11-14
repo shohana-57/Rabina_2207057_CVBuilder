@@ -1,14 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
 
-</AnchorPane>
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rabina_2207057_cvbuilder.page2_controller">
+   <center>
+      <BorderPane prefHeight="700.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <top>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="130.39998779296874" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="486.4000122070312" minWidth="10.0" prefWidth="470.4000122070312" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="198.0" text="Full Name        :">
+                     <font>
+                        <Font name="Bell MT" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="34.0" prefWidth="130.0" text="Father's Name  :" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Bell MT" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="32.0" prefWidth="130.0" text="Mother's Name :" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Bell MT" size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="fullNameField" alignment="CENTER" onMouseDragEntered="#maximum15character" promptText="ENTER  FULL  NAME  IN  CAPITAL" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Bodoni MT" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="34.0" prefWidth="130.0" text="Email Address  :" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Bell MT" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="26.0" prefWidth="130.0" text="Phone Number :" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Bell MT" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="30.0" prefWidth="130.0" text="Address          :" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Bell MT" size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField onMouseEntered="#print" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+         </top>
+         <BorderPane.margin>
+            <Insets left="10.0" right="5.0" top="15.0" />
+         </BorderPane.margin>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="-3.0" layoutY="4.0" prefHeight="27.0" prefWidth="214.0" text="Educational Qualification  :">
+                     <font>
+                        <Font name="Bell MT" size="19.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="14.0" layoutY="31.0" prefHeight="200.0" prefWidth="577.0">
+                     <children>
+                        <TableView prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Exam Name" />
+                            <TableColumn prefWidth="156.79999542236328" text="Board" />
+                              <TableColumn prefWidth="142.39996337890625" text="Group/Dept" />
+                              <TableColumn prefWidth="96.0" text="GPA/CGPA" />
+                              <TableColumn prefWidth="107.99996948242188" text="Year" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>
