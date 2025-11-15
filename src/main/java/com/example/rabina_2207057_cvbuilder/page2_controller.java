@@ -1,5 +1,6 @@
 package com.example.rabina_2207057_cvbuilder;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -96,5 +97,15 @@ public class page2_controller {
 
     @FXML
     private TextField txtY4;
+
+    @FXML
+    void goTOPrev(ActionEvent event) {
+
+    }
+
+    @FXML
+    void goToPreview(ActionEvent event) {
+
+    }
 
 }

@@ -196,13 +196,13 @@
                   </TextArea>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" style="-fx-border-radius: 5; -fx-background-color: #85BBED; -fx-border-color: #2D4054;" text="Go Back">
+                        <Button mnemonicParsing="false" onAction="#goTOPrev" style="-fx-border-radius: 5; -fx-background-color: #85BBED; -fx-border-color: #2D4054;" text="Go Back">
                            <font>
                               <Font name="Bell MT" size="16.0" />
                            </font>
                         </Button>
                         <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" style="-fx-border-radius: 5; -fx-background-color: #85BBED; -fx-border-color: #2D4054;" text="Save &amp; Preview">
+                        <Button mnemonicParsing="false" onAction="#goToPreview" style="-fx-border-radius: 5; -fx-background-color: #85BBED; -fx-border-color: #2D4054;" text="Save &amp; Preview">
                            <font>
                               <Font name="Bell MT" size="16.0" />
                            </font>
