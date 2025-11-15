@@ -2,12 +2,22 @@ package com.example.rabina_2207057_cvbuilder;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class page2_controller {
-
+private Parent parent;
+private Scene scene;
+private Stage stage;
+private PreviewPageController preview;
     @FXML
     private TextField txtAddress;
 
@@ -99,13 +109,45 @@ public class page2_controller {
     private TextField txtY4;
 
     @FXML
-    void goTOPrev(ActionEvent event) {
+    void goTOPrev(ActionEvent event)  throws IOException {
+//        Parent root = FXMLLoader.load(getClass().getResource("/com/example/rabina_2207057_cvbuilder/front_page.fxml"));
+//
+//        Scene scene = new Scene(root);
+//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//
+//        stage.setScene(scene);
+//        //stage.setTitle("CV Information");
+//        stage.show();
 
     }
-
+public page2_controller()
+{
+    FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/com/example/rabina_2207057_cvbuilder/page-2.fxml"));
+    fxmlLoader.setController(this);
+    try {
+        parent = (Parent) fxmlLoader.load();
+        scene = new Scene(parent, 600, 800);
+    }  catch(IOException e){
+        e.printStackTrace();
+    }
+}
     @FXML
-    void goToPreview(ActionEvent event) {
+    void goToPreview(ActionEvent event)  throws IOException{
+//        Parent root = FXMLLoader.load(getClass().getResource("/com/example/rabina_2207057_cvbuilder/preview_page.fxml"));
+//
+//        Scene scene = new Scene(root);
+//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//
+//        stage.setScene(scene);
+//        stage.setTitle("CV Preview");
+//        stage.show();
+        System.out.println(txtFullName.getText());
+        preview =new PreviewPageController();
+        preview.redirectView(stage,txtFullName.getText().trim());
+
 
     }
+
+
 
 }
