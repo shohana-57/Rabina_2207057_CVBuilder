@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.rabina_2207057_cvbuilder.PreviewPageController">
+
+   <BorderPane>
+       <top>
+        <VBox spacing="10" padding="20">
+            <children>
+
+                <GridPane hgap="15" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+
+                    <!-- FULL NAME -->
+                    <Label text="Full Name:" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtFullName" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                    <Label fx:id="warnFullName" textFill="red" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                    <!-- FATHER NAME -->
+                    <Label text="Father Name:" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtFatherName" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                    <Label fx:id="warnFatherName" textFill="red" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                    <!-- MOTHER NAME -->
+                    <Label text="Mother Name:" GridPane.rowIndex="4" />
+                    <TextField fx:id="txtMotherName" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                    <Label fx:id="warnMotherName" textFill="red" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+                    <!-- EMAIL -->
+                    <Label text="Email:" GridPane.rowIndex="6" />
+                    <TextField fx:id="txtEmail" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+                    <Label fx:id="warnEmail" textFill="red" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+
+                    <!-- CONTACT NUMBER -->
+                    <Label text="Contact No:" GridPane.rowIndex="8" />
+                    <TextField fx:id="txtContact" GridPane.rowIndex="8" GridPane.columnIndex="1" />
+                    <Label fx:id="warnContact" textFill="red" GridPane.rowIndex="9" GridPane.columnIndex="1" />
+
+                </GridPane>
+
+                <Button text="Add to Table" onAction="#addToTable" />
+
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableView" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="colFullName" text="Full Name" />
+                <TableColumn fx:id="colFatherName" text="Father Name" />
+                <TableColumn fx:id="colMotherName" text="Mother Name" />
+                <TableColumn fx:id="colEmail" text="Email" />
+                <TableColumn fx:id="colContact" text="Contact" />
+            </columns>
+        </TableView>
+    </center>
+   </BorderPane>
+</BorderPane>
