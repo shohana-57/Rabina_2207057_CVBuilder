@@ -6,13 +6,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
+
 public class page2_controller {
+    public Button btnBack;
     @FXML
     private TextField txtAddress;
 
@@ -104,7 +108,7 @@ public class page2_controller {
     private TextField txtY4;
 
     @FXML
-    void goToPreview(ActionEvent e)  throws IOException{
+    void goToPreview(ActionEvent e) {
        try {
            FXMLLoader loader = new FXMLLoader(getClass().getResource("PreviewPage.fxml"));
            Parent root = loader.load();
@@ -113,34 +117,34 @@ public class page2_controller {
 
                    txtFullName.getText(),
                    txtFather.getText(),
-                   txtAddress.getText(),
-                   txtB1.getText(),
-                   txtB2.getText(),
-                   txtBirth.getTooltip(),
-                   txtCGPA1.getText(),
-                   txtCGPA2.getText(),
-                   txtD1.getText(),
-                   txtD2.getText(),
-                   txtEmail.getText(),
-                   txtExam1.getText(),
-                   txtExam2.getText(),
-                   txtExam3.getText(),
-                   txtExam4.getText(),
-                   txtExperience.getText(),
-                   txtG1.getText(),
-                   txtG2.getText(),
-                   txtGPA1.getText(),
-                   txtGPA2.getText(),
                    txtMother.getText(),
+                   txtEmail.getText(),
                    txtNumber.getText(),
-                   txtProject.getText(),
-                   txtSkills.getText(),
-                   txtU1.getText(),
-                   txtU2.getText(),
+                   txtBirth.getTooltip(),
+                   txtAddress.getText(),
+                   txtExam1.getText(),
+                   txtB1.getText(),
+                   txtG1.getText(),
+                   txtGPA1.getText(),
                    txtY1.getText(),
+                   txtExam2.getText(),
+                   txtB2.getText(),
+                   txtG2.getText(),
+                   txtGPA2.getText(),
                    txtY2.getText(),
+                   txtExam3.getText(),
+                   txtU1.getText(),
+                   txtD1.getText(),
+                   txtCGPA1.getText(),
                    txtY3.getText(),
-                   txtY4.getText()
+                   txtExam4.getText(),
+                   txtU2.getText(),
+                   txtD2.getText(),
+                   txtCGPA2.getText(),
+                   txtY4.getText(),
+                   txtSkills.getText(),
+                   txtExperience.getText(),
+                   txtProject.getText()
                    );
            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
            stage.setScene(new Scene(root, 900, 700));
@@ -152,7 +156,7 @@ public class page2_controller {
 
 @FXML
     public void goTOPrev(ActionEvent actionEvent) throws IOException {
-        Parent root=FXMLLoader.load(getClass().getResource("front_page.fxml"));
+        Parent root=FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/rabina_2207057/cvbuilder/front_page.fxml")));
         Stage stage=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root,900,700));
         stage.show();
