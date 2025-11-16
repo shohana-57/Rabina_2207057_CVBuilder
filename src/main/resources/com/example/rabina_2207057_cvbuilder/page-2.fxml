@@ -196,7 +196,7 @@
                   </TextArea>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#goTOPrev" style="-fx-border-radius: 5; -fx-background-color: #85BBED; -fx-border-color: #2D4054;" text="Go Back">
+                        <Button mnemonicParsing="false" fx:id="btnBack" onAction="#goTOPrev" style="-fx-border-radius: 5; -fx-background-color: #85BBED; -fx-border-color: #2D4054;" text="Go Back">
                            <font>
                               <Font name="Bell MT" size="16.0" />
                            </font>

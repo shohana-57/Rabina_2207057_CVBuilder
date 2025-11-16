@@ -10,6 +10,7 @@ module com.example.rabina_2207057_cvbuilder {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires javafx.graphics;
+    requires java.desktop;
 
     opens com.example.rabina_2207057_cvbuilder to javafx.fxml;
     exports com.example.rabina_2207057_cvbuilder;

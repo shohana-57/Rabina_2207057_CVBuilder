@@ -12,12 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
 public class page2_controller {
-private Parent parent;
-private Scene scene;
-private Stage stage;
-private PreviewPageController preview;
     @FXML
     private TextField txtAddress;
 
@@ -109,45 +104,57 @@ private PreviewPageController preview;
     private TextField txtY4;
 
     @FXML
-    void goTOPrev(ActionEvent event)  throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("/com/example/rabina_2207057_cvbuilder/front_page.fxml"));
-//
-//        Scene scene = new Scene(root);
-//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//
-//        stage.setScene(scene);
-//        //stage.setTitle("CV Information");
-//        stage.show();
+    void goToPreview(ActionEvent e)  throws IOException{
+       try {
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("PreviewPage.fxml"));
+           Parent root = loader.load();
+           PreviewPageController controller = loader.getController();
+           controller.setData(
+
+                   txtFullName.getText(),
+                   txtFather.getText(),
+                   txtAddress.getText(),
+                   txtB1.getText(),
+                   txtB2.getText(),
+                   txtBirth.getTooltip(),
+                   txtCGPA1.getText(),
+                   txtCGPA2.getText(),
+                   txtD1.getText(),
+                   txtD2.getText(),
+                   txtEmail.getText(),
+                   txtExam1.getText(),
+                   txtExam2.getText(),
+                   txtExam3.getText(),
+                   txtExam4.getText(),
+                   txtExperience.getText(),
+                   txtG1.getText(),
+                   txtG2.getText(),
+                   txtGPA1.getText(),
+                   txtGPA2.getText(),
+                   txtMother.getText(),
+                   txtNumber.getText(),
+                   txtProject.getText(),
+                   txtSkills.getText(),
+                   txtU1.getText(),
+                   txtU2.getText(),
+                   txtY1.getText(),
+                   txtY2.getText(),
+                   txtY3.getText(),
+                   txtY4.getText()
+                   );
+           Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+           stage.setScene(new Scene(root, 900, 700));
+       }catch(Exception ex){ex.printStackTrace();}
+
 
     }
-public page2_controller()
-{
-    FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/com/example/rabina_2207057_cvbuilder/page-2.fxml"));
-    fxmlLoader.setController(this);
-    try {
-        parent = (Parent) fxmlLoader.load();
-        scene = new Scene(parent, 600, 800);
-    }  catch(IOException e){
-        e.printStackTrace();
+
+
+@FXML
+    public void goTOPrev(ActionEvent actionEvent) throws IOException {
+        Parent root=FXMLLoader.load(getClass().getResource("front_page.fxml"));
+        Stage stage=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root,900,700));
+        stage.show();
     }
-}
-    @FXML
-    void goToPreview(ActionEvent event)  throws IOException{
-//        Parent root = FXMLLoader.load(getClass().getResource("/com/example/rabina_2207057_cvbuilder/preview_page.fxml"));
-//
-//        Scene scene = new Scene(root);
-//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//
-//        stage.setScene(scene);
-//        stage.setTitle("CV Preview");
-//        stage.show();
-        System.out.println(txtFullName.getText());
-        preview =new PreviewPageController();
-        preview.redirectView(stage,txtFullName.getText().trim());
-
-
-    }
-
-
-
 }
