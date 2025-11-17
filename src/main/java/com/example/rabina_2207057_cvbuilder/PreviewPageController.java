@@ -93,4 +93,5 @@ public class PreviewPageController {
         Stage stage=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
+
 }

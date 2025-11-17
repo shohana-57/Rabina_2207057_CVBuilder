@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -109,6 +106,9 @@ public class page2_controller {
 
     @FXML
     void goToPreview(ActionEvent e) {
+        if(!validate())
+        { showError();
+            return;}
        try {
            FXMLLoader loader = new FXMLLoader(getClass().getResource("PreviewPage.fxml"));
            Parent root = loader.load();
@@ -147,10 +147,33 @@ public class page2_controller {
                    txtProject.getText()
                    );
            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-           stage.setScene(new Scene(root, 900, 700));
+           stage.setScene(new Scene(root, 900, 1000));
+
+           showSuccess();
        }catch(Exception ex){ex.printStackTrace();}
 
 
+    }
+    private boolean validate(){
+        return !txtFullName.getText().trim().isEmpty() || !txtFather.getText().trim().isEmpty() || !txtMother.getText().trim().isEmpty() || txtEmail.getText().matches("@") || txtFullName.getText().matches("\\d{10,11}");
+
+    }
+
+    private void showError(){
+        Alert alert=new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("Input Error");
+        alert.setContentText("Error!");
+        alert.showAndWait();
+    }
+
+    private void showSuccess()
+    {
+        Alert alert=new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText("CV saved successfully!");
+        alert.showAndWait();
     }
 
 
