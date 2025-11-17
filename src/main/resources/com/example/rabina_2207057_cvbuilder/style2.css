@@ -1,0 +1,8 @@
+.cv-box {
+    -fx-border-color: #C06920;       /* Border color */
+    -fx-border-width: 5px;           /* Border thickness */
+    -fx-border-radius: 10px;         /* Rounded corners */
+    -fx-background-radius: 10px;     /* Match background to border */
+    -fx-padding: 15px;               /* Inner spacing */
+   /* -fx-background-color: #f8faff;   /* Light background */
+}
