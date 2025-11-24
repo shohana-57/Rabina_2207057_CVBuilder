@@ -25,7 +25,7 @@ public class page2_controller {
     public Button btnDelete;
     public Button btnUpdate;
     public TextField txtSearch;
-    public ListView listUsers;
+    public ListView<CVNode> listUsers;
     @FXML
     private TextField txtAddress;
 
@@ -365,7 +365,10 @@ public class page2_controller {
     @FXML
     private void onUpdateClicked() {
         CVNode selected = (CVNode) listUsers.getSelectionModel().getSelectedItem();
-        if (selected == null) return;
+        if (selected == null){
+            setStatus("Select a record to update.");
+            return;
+        }
 
         CVNode updated = new CVNode(
                 selected.getId(),
@@ -407,6 +410,21 @@ public class page2_controller {
             if (index >= 0) samples.set(index, updated);
             listUsers.getSelectionModel().select(updated);
         }, this::onError);
+    }
+
+    @FXML
+    private void onDeleteClicked() {
+        CVNode selected = listUsers.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            setStatus("Select a record to delete.");
+            return;
+        }
+
+        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION,
+                "Delete record #" + selected.getId() + " (" + selected.getFullName() + ")?",
+                ButtonType.YES, ButtonType.NO);
+        confirm.setHeaderText("Confirm delete");
+
     }
 
 }
