@@ -429,17 +429,15 @@ public class page2_controller {
                 setStatus("Deleting...");
                 repository.deleteAsync(selected.getId(), () -> {
                     samples.remove(selected);
-                    clearFields();
+
                     setStatus("Record deleted.");
                 }, this::onError);
                 clearForm();
             }
         });
 
-            }
-
-    private void clearFields() {
     }
+
 
 
 
