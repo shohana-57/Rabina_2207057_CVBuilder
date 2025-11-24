@@ -116,6 +116,9 @@ public class page2_controller {
     @FXML
     private TextField txtY4;
 
+    @FXML private Button btnSave;
+    @FXML private Label statusLabel;
+
     private final ObservableList<CVNode> samples= FXCollections.observableArrayList();
     private final CVRepository repository=new CVRepository();
 
@@ -140,7 +143,12 @@ public class page2_controller {
 
 
     private void loadAllCV(){
-        repository.getAllAsync(this::onLoadSuccess, this:: onError);
+        setStatus("Loading record...");
+        repository.getAllAsync(this::onLoadSuccess, this::onError);
+    }
+
+    private void setStatus(String s) {
+        Platform.runLater(()->statusLabel.setText(s));
     }
 
     private void onLoadSuccess(List<CVNode> loaded){
@@ -344,5 +352,15 @@ public class page2_controller {
     }
 
     public void onSaveClicked(ActionEvent actionEvent) {
+        if(!validate()){
+            showError();
+            return;
+        }
+        CVNode cv= getFormData();
+        setStatus("Saving...");
+        repository.getAllAsync(this::onLoadSuccess, this::onError);
+
     }
+
+
 }
