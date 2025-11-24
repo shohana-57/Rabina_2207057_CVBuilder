@@ -421,10 +421,26 @@ public class page2_controller {
         }
 
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION,
-                "Delete record #" + selected.getId() + " (" + selected.getFullName() + ")?",
+                "Delete record #" + selected.getFullName() + "?",
                 ButtonType.YES, ButtonType.NO);
         confirm.setHeaderText("Confirm delete");
+        confirm.showAndWait().ifPresent(btn -> {
+            if (btn == ButtonType.YES) {
+                setStatus("Deleting...");
+                repository.deleteAsync(selected.getId(), () -> {
+                    samples.remove(selected);
+                    clearFields();
+                    setStatus("Record deleted.");
+                }, this::onError);
+                clearForm();
+            }
+        });
 
+            }
+
+    private void clearFields() {
     }
+
+
 
 }

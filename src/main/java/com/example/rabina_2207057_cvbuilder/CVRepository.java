@@ -32,4 +32,7 @@ public class CVRepository {
             }
         });
     }
+
+    public void deleteAsync(int id, Runnable onSuccess, Consumer<Throwable> onError) {
+    }
 }
