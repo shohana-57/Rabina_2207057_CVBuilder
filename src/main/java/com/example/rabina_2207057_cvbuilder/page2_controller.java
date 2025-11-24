@@ -156,6 +156,37 @@ public class page2_controller {
 
     private void loadCVToForm(CVNode cv) {
         txtFullName.setText(cv.getFullName());
+        txtFather.setText(cv.getFatherName());
+        txtMother.setText(cv.getMotherName());
+        txtEmail.setText(cv.getEmail());
+        txtAddress.setText(cv.getAddress());
+        txtNumber.setText(cv.getContactNumber());
+        txtBirth.setValue(cv.getDateofBirth());
+        txtExam1.setText(cv.getExam1());
+        txtB1.setText(cv.getB1());
+        txtG1.setText(cv.getFG1());
+        txtGPA1.setText(cv.getGPA1());
+        txtY1.setText(cv.getY1());
+        txtExam2.setText(cv.getExam2());
+        txtB2.setText(cv.getB2());
+        txtG2.setText(cv.getG2());
+        txtGPA2.setText(cv.getGPA2());
+        txtY2.setText(cv.getY2());
+        txtExam3.setText(cv.getExam3());
+        txtU1.setText(cv.getU1());
+        txtD1.setText(cv.getD1());
+        txtCGPA1.setText(cv.getCGPA1());
+        txtY3.setText(cv.getY3());
+        txtExam4.setText(cv.getExam4());
+        txtU2.setText(cv.getU2());
+        txtD2.setText(cv.getD2());
+        txtCGPA2.setText(cv.getCGPA2());
+        txtY4.setText(cv.getY4());
+        txtSkills.setText(cv.getSkills());
+        txtExperience.setText(cv.getExperience());
+        txtProject.setText(cv.getProjects());
+
+
     }
 
 
