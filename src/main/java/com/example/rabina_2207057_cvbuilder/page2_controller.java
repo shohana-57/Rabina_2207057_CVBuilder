@@ -14,6 +14,10 @@ import java.util.Objects;
 
 public class page2_controller {
     public Button btnBack;
+    public Button btnDelete;
+    public Button btnUpdate;
+    public TextField txtSearch;
+    public ListView listUsers;
     @FXML
     private TextField txtAddress;
 
