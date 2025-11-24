@@ -1,5 +1,7 @@
 package com.example.rabina_2207057_cvbuilder;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -107,6 +109,9 @@ public class page2_controller {
 
     @FXML
     private TextField txtY4;
+
+    private final ObservableList<CVNode> samples= FXCollections.observableArrayList();
+    private final CVRepository repository=new CVRepository();
 
     @FXML
     void goToPreview(ActionEvent e) {
