@@ -11,6 +11,7 @@ module com.example.rabina_2207057_cvbuilder {
     requires eu.hansolo.tilesfx;
     requires javafx.graphics;
     requires java.desktop;
+    requires java.sql;
 
     opens com.example.rabina_2207057_cvbuilder to javafx.fxml;
     exports com.example.rabina_2207057_cvbuilder;

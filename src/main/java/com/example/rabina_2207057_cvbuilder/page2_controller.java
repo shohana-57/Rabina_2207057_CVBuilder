@@ -360,6 +360,7 @@ public class page2_controller {
         setStatus("Saving...");
         repository.getAllAsync(this::onLoadSuccess, this::onError);
 
+
     }
 
     @FXML
