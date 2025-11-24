@@ -12,7 +12,13 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Objects;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import java.util.List;
+import java.time.LocalDate;
 
 public class page2_controller {
     public Button btnBack;
@@ -137,7 +143,19 @@ public class page2_controller {
         repository.getAllAsync(this::onLoadSuccess, this:: onError);
     }
 
-    private void loadCVToForm(boolean newSel) {
+    private void onLoadSuccess(List<CVNode> loaded){
+        samples.setAll(loaded);
+    }
+
+    private void onError(Throwable throwable){
+        throwable.printStackTrace();
+        Alert alert=new Alert(Alert.AlertType.ERROR, throwable.getMessage(),ButtonType.OK);
+        alert.setHeaderText(" An Error occured");
+        alert.showAndWait();
+    }
+
+    private void loadCVToForm(CVNode cv) {
+        txtFullName.setText(cv.getFullName());
     }
 
 
