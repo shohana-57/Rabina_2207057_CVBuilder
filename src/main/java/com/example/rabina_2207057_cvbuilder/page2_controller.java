@@ -114,6 +114,35 @@ public class page2_controller {
     private final CVRepository repository=new CVRepository();
 
     @FXML
+    public void initialize(){
+        listUsers.setItems(samples);
+        listUsers.setCellFactory(list-> new ListCell<CVNode>(){
+            protected void updateItem(CVNode item, boolean empty){
+                super.updateItem(item,empty);
+                setText(empty || item == null ? null :item.getFullName());
+            }
+        });
+
+        listUsers.getSelectionModel().selectedItemProperty().addListener((obs,oldsel,newsel)-> {
+                    if (newSel != null)
+                        loadCVToForm(newSel);
+
+                }
+                );
+        loadAllCV();
+    }
+
+
+    private void loadAllCV(){
+        repository.getAllAsync(this::onLoadSuccess, this:: onError);
+    }
+
+    private void loadCVToForm(boolean newSel) {
+    }
+
+
+
+    @FXML
     void goToPreview(ActionEvent e) {
         if(!validate())
         { showError();
