@@ -129,9 +129,9 @@ public class page2_controller {
             }
         });
 
-        listUsers.getSelectionModel().selectedItemProperty().addListener((obs,oldsel,newsel)-> {
+        listUsers.getSelectionModel().selectedItemProperty().addListener((obs,oldsel,newSel)-> {
                     if (newSel != null)
-                        loadCVToForm(newSel);
+                        loadCVToForm((CVNode) newSel);
 
                 }
                 );
@@ -189,6 +189,77 @@ public class page2_controller {
 
     }
 
+    private CVNode getFormData(){
+        return new CVNode(
+                -1,
+                txtFullName.getText().trim(),
+                txtFather.getText().trim(),
+                txtMother.getText().trim(),
+                txtEmail.getText().trim(),
+                txtAddress.getText().trim(),
+                txtNumber.getText().trim(),
+                txtBirth.getValue(),
+                txtAddress.getText().trim(),
+                txtExam1.getText().trim(),
+                txtB1.getText().trim(),
+                txtG1.getText().trim(),
+                txtGPA1.getText().trim(),
+                txtY1.getText().trim(),
+                txtExam2.getText().trim(),
+                txtB2.getText().trim(),
+                txtG2.getText().trim(),
+                txtGPA2.getText().trim(),
+                txtY2.getText().trim(),
+                txtExam3.getText().trim(),
+                txtU1.getText().trim(),
+                txtD1.getText().trim(),
+                txtCGPA1.getText().trim(),
+                txtY3.getText().trim(),
+                txtExam4.getText().trim(),
+                txtU2.getText().trim(),
+                txtD2.getText().trim(),
+                txtCGPA2.getText().trim(),
+                txtY4.getText().trim(),
+                txtSkills.getText().trim(),
+                txtExperience.getText().trim(),
+                txtProject.getText().trim()
+
+        );
+
+    }
+
+    private void clearForm(){
+        txtFullName.clear();
+                txtFather.clear();
+                txtMother.clear();
+                txtEmail.clear();
+                txtNumber.clear();
+                txtBirth.setValue(null);
+                txtAddress.clear();
+                txtExam1.clear();
+                txtB1.clear();
+                txtG1.clear();
+                txtGPA1.clear();
+                txtY1.clear();
+                txtExam2.clear();
+                txtB2.clear();
+                txtG2.clear();
+                txtGPA2.clear();
+                txtY2.clear();
+                txtExam3.clear();
+                txtU1.clear();
+                txtD1.clear();
+                txtCGPA1.clear();
+                txtY3.clear();
+                txtExam4.clear();
+                txtU2.clear();
+                txtD2.clear();
+                txtCGPA2.clear();
+                txtY4.clear();
+                txtSkills.clear();
+                txtExperience.clear();
+                txtProject.clear();
+    }
 
 
     @FXML
