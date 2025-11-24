@@ -34,5 +34,14 @@ public class CVRepository {
     }
 
     public void deleteAsync(int id, Runnable onSuccess, Consumer<Throwable> onError) {
+        executor.submit(() -> {
+            try {
+                DatabaseHelper.deleteSample(id);
+                Platform.runLater(onSuccess);
+            } catch (Throwable ex) {
+                Platform.runLater(() -> onError.accept(ex));
+            }
+        });
+
     }
 }

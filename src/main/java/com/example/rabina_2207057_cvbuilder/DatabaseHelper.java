@@ -9,4 +9,7 @@ public class DatabaseHelper {
 
     public static void updateSample(CVNode node) {
     }
+
+    public static void deleteSample(int id) {
+    }
 }
