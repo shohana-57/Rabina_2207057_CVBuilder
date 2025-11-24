@@ -342,4 +342,7 @@ public class page2_controller {
         stage.setScene(new Scene(root,900,700));
         stage.show();
     }
+
+    public void onSaveClicked(ActionEvent actionEvent) {
+    }
 }

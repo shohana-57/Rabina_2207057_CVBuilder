@@ -222,6 +222,7 @@
             <TextField fx:id="txtSearch" promptText="Search by id"/>
             <ListView fx:id="listUsers" prefHeight="400.0"/>
             <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="btnSave" text="Save" onAction="#onSaveClicked"/>
                 <Button fx:id="btnUpdate" text="Update"/>
                 <Button fx:id="btnDelete" text="Delete"/>
             </HBox>
