@@ -4,4 +4,7 @@ public class CVRepository {
     public void getAllAsync(Object o, Object o1) {
 
     }
+
+    public void updateAsync(CVNode updated, Object o, Object onError) {
+    }
 }

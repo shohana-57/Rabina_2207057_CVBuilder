@@ -362,5 +362,51 @@ public class page2_controller {
 
     }
 
+    @FXML
+    private void onUpdateClicked() {
+        CVNode selected = (CVNode) listUsers.getSelectionModel().getSelectedItem();
+        if (selected == null) return;
+
+        CVNode updated = new CVNode(
+                selected.getId(),
+                txtFullName.getText().trim(),
+                txtFather.getText().trim(),
+                txtMother.getText().trim(),
+                txtEmail.getText().trim(),
+                txtAddress.getText().trim(),
+                txtNumber.getText().trim(),
+                txtBirth.getValue(),
+                txtAddress.getText().trim(),
+                txtExam1.getText().trim(),
+                txtB1.getText().trim(),
+                txtG1.getText().trim(),
+                txtGPA1.getText().trim(),
+                txtY1.getText().trim(),
+                txtExam2.getText().trim(),
+                txtB2.getText().trim(),
+                txtG2.getText().trim(),
+                txtGPA2.getText().trim(),
+                txtY2.getText().trim(),
+                txtExam3.getText().trim(),
+                txtU1.getText().trim(),
+                txtD1.getText().trim(),
+                txtCGPA1.getText().trim(),
+                txtY3.getText().trim(),
+                txtExam4.getText().trim(),
+                txtU2.getText().trim(),
+                txtD2.getText().trim(),
+                txtCGPA2.getText().trim(),
+                txtY4.getText().trim(),
+                txtSkills.getText().trim(),
+                txtExperience.getText().trim(),
+                txtProject.getText().trim()
+        );
+
+        repository.updateAsync(updated, () -> {
+            int index = samples.indexOf(selected);
+            if (index >= 0) samples.set(index, updated);
+            listUsers.getSelectionModel().select(updated);
+        }, this::onError);
+    }
 
 }
