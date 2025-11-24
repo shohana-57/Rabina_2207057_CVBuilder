@@ -22,6 +22,14 @@ public class CVRepository {
 
     }
 
-    public void updateAsync(CVNode updated, Object o, Object onError) {
+    public void updateAsync(CVNode node, Runnable onSuccess, Consumer<Throwable> onError) {
+        executor.submit(() -> {
+            try {
+                DatabaseHelper.updateSample(node);
+                Platform.runLater(onSuccess);
+            } catch (Throwable ex) {
+                Platform.runLater(() -> onError.accept(ex));
+            }
+        });
     }
 }
