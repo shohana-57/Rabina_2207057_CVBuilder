@@ -1,7 +1,5 @@
 package com.example.rabina_2207057_cvbuilder;
 
-import javafx.scene.control.Tooltip;
-
 import java.time.LocalDate;
 
 public class CVNode {
@@ -13,7 +11,7 @@ public class CVNode {
     private  String trim3;
     private  String trim4;
     private  String trim5;
-    private  LocalDate localDate;
+    private  String date;
     private  String text;
     private  String text1;
     private  String text2;
@@ -40,7 +38,7 @@ public class CVNode {
     private  String text23;
 
 
-    public CVNode(int id, String trim, String trim1, String trim2, String trim3, String trim4,String trim5, LocalDate localDate, String text, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11, String text12, String text13, String text14, String text15, String text16, String text17, String text18, String text19, String text20, String text21, String text22) {
+    public CVNode(int id, String trim, String trim1, String trim2, String trim3, String trim4,String trim5,String date, String text, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11, String text12, String text13, String text14, String text15, String text16, String text17, String text18, String text19, String text20, String text21, String text22) {
         this.id=id;
         this.trim=trim;
         this.trim1=trim1;
@@ -48,7 +46,7 @@ public class CVNode {
         this.trim3=trim3;
         this.trim4=trim4;
         this.trim5=trim5;
-        this.localDate=localDate;
+        this.date=date;
         this.text=text;
         this.text1=text1;
         this.text2=text2;
@@ -113,8 +111,8 @@ public class CVNode {
         return trim5;
     }
 
-    public LocalDate getDateofBirth() {
-        return localDate;
+    public String getDateofBirth() {
+        return date;
     }
 
     public String getExam1() {

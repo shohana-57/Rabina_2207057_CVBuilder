@@ -9,7 +9,7 @@ public class JsonUtil {
         return"";
     }
 
-    public static String toJson(String name, String father, String mother, String email, String address, String number, Integer date, String exam1, String B1, String G1, String GPA1, String Y1,String exam2, String B2, String G2, String GPA2, String Y2, String exam3, String U1, String D1, String CGPA1, String Y3, String exam4, String U2, String D2, String CGPA2, String Y4) {
+    public static String toJson(String name, String father, String mother, String email, String address, String number, String date, String exam1, String B1, String G1, String GPA1, String Y1,String exam2, String B2, String G2, String GPA2, String Y2, String exam3, String U1, String D1, String CGPA1, String Y3, String exam4, String U2, String D2, String CGPA2, String Y4) {
         return "{ \"Fullname\":" + name + ","
                 + " \"Fathername\":" + father + ","
                 + " \"Mothername\":" + mother + ","

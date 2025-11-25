@@ -90,7 +90,7 @@
                                 <Font name="Bell MT" size="19.0" />
                             </font>
                         </Label>
-                        <DatePicker fx:id="txtBirth" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtBirth" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                     </GridPane>
                     <Label text="Educational Qualification  : ">
                         <font>

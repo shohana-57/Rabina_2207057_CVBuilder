@@ -36,7 +36,7 @@ public class page2_controller {
     private TextField txtB2;
 
     @FXML
-    private DatePicker txtBirth;
+    private TextField txtBirth;
 
     @FXML
     private TextField txtCGPA1;
@@ -169,7 +169,7 @@ public class page2_controller {
         txtEmail.setText(cv.getEmail());
         txtAddress.setText(cv.getAddress());
         txtNumber.setText(cv.getContactNumber());
-        txtBirth.setValue(cv.getDateofBirth());
+        txtBirth.setText(cv.getDateofBirth());
         txtExam1.setText(cv.getExam1());
         txtB1.setText(cv.getB1());
         txtG1.setText(cv.getFG1());
@@ -206,7 +206,7 @@ public class page2_controller {
                 txtEmail.getText().trim(),
                 txtAddress.getText().trim(),
                 txtNumber.getText().trim(),
-                txtBirth.getValue(),
+                txtBirth.getText().trim(),
                 txtExam1.getText().trim(),
                 txtB1.getText().trim(),
                 txtG1.getText().trim(),
@@ -241,7 +241,7 @@ public class page2_controller {
                 txtMother.clear();
                 txtEmail.clear();
                 txtNumber.clear();
-                txtBirth.setValue(null);
+                txtBirth.clear();
                 txtAddress.clear();
                 txtExam1.clear();
                 txtB1.clear();
@@ -378,7 +378,7 @@ public class page2_controller {
                 txtEmail.getText().trim(),
                 txtAddress.getText().trim(),
                 txtNumber.getText().trim(),
-                txtBirth.getValue(),
+                txtBirth.getText().trim(),
                 txtExam1.getText().trim(),
                 txtB1.getText().trim(),
                 txtG1.getText().trim(),
