@@ -5,6 +5,7 @@ import javafx.scene.control.Tooltip;
 import java.time.LocalDate;
 
 public class CVNode {
+    private  String jsonData;
     private  int id;
     private  String trim;
     private  String trim1;
@@ -39,7 +40,7 @@ public class CVNode {
     private  String text23;
 
 
-    public CVNode(int id, String trim, String trim1, String trim2, String trim3, String trim4,String trim5, LocalDate localDate, String text, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11, String text12, String text13, String text14, String text15, String text16, String text17, String text18, String text19, String text20, String text21, String text22, String text23) {
+    public CVNode(int id, String trim, String trim1, String trim2, String trim3, String trim4,String trim5, LocalDate localDate, String text, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9, String text10, String text11, String text12, String text13, String text14, String text15, String text16, String text17, String text18, String text19, String text20, String text21, String text22) {
         this.id=id;
         this.trim=trim;
         this.trim1=trim1;
@@ -74,6 +75,15 @@ public class CVNode {
         this.text23=text23;
     }
 
+    public CVNode(int id,String fullName,String jsonData){
+        this.id=id;
+        this.trim=fullName;
+        this.jsonData=jsonData;
+    }
+
+    public String getJsonData(){
+        return jsonData;
+    }
 
     public int getId() {
         return id;
@@ -167,35 +177,50 @@ public class CVNode {
         return text14;
     }
 
+
     public String getExam4() {
         return text15;
     }
 
+
     public String getU2() {
-        return text17;
+        return text16;
     }
 
     public String getD2() {
-        return text18;
+        return text17;
     }
 
     public String getCGPA2() {
-        return text19;
+        return text18;
     }
 
     public String getY4() {
-        return text20;
+        return text19;
     }
 
     public String getSkills() {
-        return text21;
+        return text20;
     }
 
     public String getExperience() {
-        return text22;
+        return text21;
     }
 
     public String getProjects() {
-        return text23;
+        return text22;
     }
+
+    public void setFullName(String fullName){
+        this.trim=fullName;
+    }
+    public void setJsonData(String jsonData){
+        this.jsonData=jsonData;
+    }
+
+   public String toString(){
+        return trim;
+   }
+
+
 }
