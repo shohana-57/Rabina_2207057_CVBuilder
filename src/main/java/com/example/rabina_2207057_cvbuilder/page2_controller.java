@@ -437,14 +437,7 @@ public class page2_controller {
 
     }
 
-    private ListView<CVNode> listView;
 
-    listView.setonMouseClicked(event->{
-        CVNode selected= listView.getSelectionModel().getSelectedItem();
-        if(selected == null )
-            return;
-        openPreview(selected);
-    });
 
 
 

@@ -1,6 +1,7 @@
 package com.example.rabina_2207057_cvbuilder;
 
 public class JsonUtil {
+
     public JsonUtil(String jsonData) {
     }
 
@@ -37,5 +38,7 @@ public class JsonUtil {
                 + " \"Department2\":" + D2 + ","
                 + " \"CGPA2\":" + CGPA2 + ","
                 + " \"Year4\":" + Y4 +"}";
+
+
     }
 }
